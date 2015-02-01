@@ -1,0 +1,14 @@
+{
+  "name": "uberSurge",
+  "version": "1.0.0",
+  "description": "Check for and alerting on uberSurge pricing",
+  "main": "index.js",
+  "engines": {
+    "node": "0.10.36"
+  },
+  "dependencies": {
+    "mandrill-api": "^1.0.41",
+    "mongodb": "^1.4.29",
+    "request": "^2.51.0"
+  }
+}

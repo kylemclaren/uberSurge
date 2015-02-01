@@ -1,0 +1,20 @@
+{
+  "name": "uberSurge",
+  "repository": "https://github.com/kylemclaren/ubersurge",
+  "env": {
+    "UBER_SECRET",
+    "UBER_CLIENT_ID",
+    "UBER_SERVER_TOKEN",
+    "ZONE",
+    "START_LATITUDE",
+    "START_LONGITUDE",
+    "END_LATITUDE",
+    "END_LONGITUDE",
+    "TO_EMAIL",
+    "TO_NAME"
+  },
+  "addons": [
+    "mandrill:starter",
+    "scheduler"
+  ]
+}
