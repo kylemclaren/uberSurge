@@ -2,16 +2,36 @@
   "name": "uberSurge",
   "repository": "https://github.com/kylemclaren/ubersurge",
   "env": {
-    "UBER_SECRET",
-    "UBER_CLIENT_ID",
-    "UBER_SERVER_TOKEN",
-    "ZONE",
-    "START_LATITUDE",
-    "START_LONGITUDE",
-    "END_LATITUDE",
-    "END_LONGITUDE",
-    "TO_EMAIL",
-    "TO_NAME"
+    "UBER_SECRET": {
+      "description": ""
+    },
+    "UBER_CLIENT_ID": {
+      "description": ""
+    },
+    "UBER_SERVER_TOKEN": {
+      "description": ""
+    },
+    "ZONE": {
+      "description": ""
+    },
+    "START_LATITUDE": {
+      "description": ""
+    },
+    "START_LONGITUDE": {
+      "description": ""
+    },
+    "END_LATITUDE": {
+      "description": ""
+    },
+    "END_LONGITUDE": {
+      "description": ""
+    },
+    "TO_EMAIL": {
+      "description": ""
+    },
+    "TO_NAME": {
+      "description": ""
+    }
   },
   "addons": [
     "mandrill:starter",
