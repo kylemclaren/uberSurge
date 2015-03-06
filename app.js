@@ -23,8 +23,6 @@ mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_APIKEY);
 
 timestamp = new Date().toString();
 
-zoneCaps = zone.toUppercase();
-
 request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&server_token=' + servertoken + '&secret=' + secret + '&start_latitude=' + startlat + '&start_longitude=' + startlong + '&end_latitude=' + endlat + '&end_longitude=' + endlong, function (error, response, body) {
 
   if (!error && response.statusCode == 200) {
@@ -63,7 +61,7 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
 
             to: driver_number,
             from: twilio_number,
-            body: 'Uber surge pricing in ' + zoneCaps + '. ' + 'Current multiplier is' + surge + 'x.'
+            body: 'Uber surge pricing in ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
 
         }, function(err, responseData) {
 
