@@ -9,6 +9,7 @@
   "dependencies": {
     "mandrill-api": "^1.0.41",
     "mongodb": "^1.4.29",
-    "request": "^2.51.0"
+    "request": "^2.51.0",
+    "twilio": "^1.11.1"
   }
 }
