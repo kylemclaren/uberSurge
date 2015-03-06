@@ -1,12 +1,3 @@
-var request = require('request');
-var mongo = require('mongodb');
-var mandrill = require('mandrill-api/mandrill');
-var twilio_client = require('twilio')(twilio_account_sid, twilio_auth_token);
-
-mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_APIKEY);
-
-timestamp = new Date().toString();
-
 secret = process.env.UBER_SECRET;
 clientid = process.env.UBER_CLIENT_ID;
 servertoken = process.env.UBER_SERVER_TOKEN;
@@ -22,6 +13,15 @@ driver_number =process.env.DRIVER_NUMBER;
 twilio_number =process.env.TWILIO_NUMBER;
 twilio_account_sid =process.env.TWILIO_ACCOUNT_SID;
 twilio_auth_token =process.env.TWILIO_AUTH_TOKEN;
+
+var request = require('request');
+var mongo = require('mongodb');
+var mandrill = require('mandrill-api/mandrill');
+var twilio_client = require('twilio')(twilio_account_sid, twilio_auth_token);
+
+mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_APIKEY);
+
+timestamp = new Date().toString();
 
 zoneCaps = zone.toUppercase();
 
