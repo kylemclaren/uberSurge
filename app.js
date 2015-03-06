@@ -1,7 +1,7 @@
 var request = require('request');
 var mongo = require('mongodb');
 var mandrill = require('mandrill-api/mandrill');
-var twilio_client = require('twilio')('ACCOUNT_SID', 'AUTH_TOKEN');
+var twilio_client = require('twilio')(twilio_account_sid, twilio_auth_token);
 
 mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_APIKEY);
 
@@ -18,6 +18,10 @@ zone = process.env.ZONE;
 from_email =process.env.MANDRILL_USERNAME;
 to_email =process.env.TO_EMAIL;
 to_name =process.env.TO_NAME;
+driver_number =process.env.DRIVER_NUMBER;
+twilio_number =process.env.TWILIO_NUMBER;
+twilio_account_sid =process.env.TWILIO_ACCOUNT_SID;
+twilio_auth_token =process.env.TWILIO_AUTH_TOKEN;
 
 request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&server_token=' + servertoken + '&secret=' + secret + '&start_latitude=' + startlat + '&start_longitude=' + startlong + '&end_latitude=' + endlat + '&end_longitude=' + endlong, function (error, response, body) {
 
@@ -55,8 +59,8 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
 
         twilio_client.sendMessage({
 
-            to: DRIVER_NUMBER,
-            from: TWILIO_NUMBER,
+            to: driver_number,
+            from: twilio_number,
             body: 'Uber surge pricing in ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
 
         }, function(err, responseData) {
