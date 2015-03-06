@@ -1,6 +1,7 @@
 var request = require('request');
 var mongo = require('mongodb');
 var mandrill = require('mandrill-api/mandrill');
+var twilio_client = require('twilio')('ACCOUNT_SID', 'AUTH_TOKEN');
 
 mandrill_client = new mandrill.Mandrill(process.env.MANDRILL_APIKEY);
 
@@ -49,5 +50,24 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
           console.log('A mandrill error occurred: ' + e.name + ' - ' + e.message);
           // A mandrill error occurred: Unknown_Subaccount - No subaccount exists with the id 'customer-123'
       });
+
+      if (surge > 1.4)
+
+        twilio_client.sendMessage({
+
+            to: DRIVER_NUMBER,
+            from: TWILIO_NUMBER,
+            body: 'Uber surge pricing in ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
+
+        }, function(err, responseData) {
+
+            if (!err) {
+
+                console.log(responseData.from);
+                console.log(responseData.body);
+
+            }
+        });
+
   }
 });
