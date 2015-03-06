@@ -23,6 +23,8 @@ twilio_number =process.env.TWILIO_NUMBER;
 twilio_account_sid =process.env.TWILIO_ACCOUNT_SID;
 twilio_auth_token =process.env.TWILIO_AUTH_TOKEN;
 
+zoneCaps = zone.toUppercase();
+
 request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&server_token=' + servertoken + '&secret=' + secret + '&start_latitude=' + startlat + '&start_longitude=' + startlong + '&end_latitude=' + endlat + '&end_longitude=' + endlong, function (error, response, body) {
 
   if (!error && response.statusCode == 200) {
@@ -61,7 +63,7 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
 
             to: driver_number,
             from: twilio_number,
-            body: 'Uber surge pricing in ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
+            body: 'Uber surge pricing in ' + zoneCaps + '. ' + 'Current multiplier is' + surge + 'x.'
 
         }, function(err, responseData) {
 
