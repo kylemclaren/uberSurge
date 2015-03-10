@@ -72,6 +72,8 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
 
             }
         });
+        
+        console.log("Twilio SMS sent!");
 
   }
 });
