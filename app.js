@@ -61,7 +61,7 @@ request('https://api.uber.com/v1/estimates/price?client_id=' + clientid + '&serv
 
             to: driver_number,
             from: twilio_number,
-            body: 'Uber surge pricing in ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
+            body: 'Uber surge pricing at ' + zone + '. ' + 'Current multiplier is' + surge + 'x.'
 
         }, function(err, responseData) {
 
